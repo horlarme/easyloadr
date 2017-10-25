@@ -43,10 +43,12 @@ var easyloadr = {
      * @param e Click
      */
     clicked: function (e) {
+        //Stop the element from doing its default action
+        e.preventDefault();
         //The link to fetch from
         link = e.target.getAttribute('easy-load-url');
         //Method
-        method = e.target.getAttribute('easy-load-method');
+        method = e.target.getAttribute('easy-load-method') ? e.target.getAttribute('easy-load-method') : 'GET';
         //The target ID, Class Name or Element Selector Name
         target = e.target.getAttribute('easy-load-target');
         //The target element itself
@@ -63,17 +65,15 @@ var easyloadr = {
         return a;
     },
     createLoadingBar: function () {
-        o = "<div easy-load-loading></div>";
-        document.body.innerHTML += o;
+        document.body.innerHTML += "<div easy-load-loading></div>";
     },
     loadingBar: function () {
-        return document.querySelector('[easy-load-loading]');
+        return document.body.querySelector('div[easy-load-loading]');
     },
-    hideLoading: function(){
-        easyloadr.loadingBar().style.display = 'none';
+    hideLoading: function () {
+        easyloadr.loadingBar().style.width = '0';
     },
     load: function (percentage = '10%', response = '') {
-        easyloadr.loadingBar().style.display = 'inline';
         easyloadr.loadingBar().style.width = percentage;
         switch (response) {
             case 'success':
@@ -86,34 +86,51 @@ var easyloadr = {
                 easyloadr.loadingBar().style.background = 'blue';
                 break;
         }
-        setTimeout(easyloadr.hideLoading(), 3000);
     },
-    fecthContent: function (target, link, method = 'GET') {
+    fecthContent: function (target, link) {
         a = easyloadr.ajax();
-        a.open(method, link, true);
-        a.setRequestHeader('Accept', 'text/html');
-        a.setRequestHeader('Content-Type', 'text/html');
+        a.open(method, link + ((/\?/).test(link) ? "&" : "?") + (new Date()).getTime(), true);
+        a.overrideMimeType("text/html");
         a.onreadystatechange = function () {
             switch (a.readyState) {
-                case 2:
-                    easyloadr.load('10%');
-                    break;
-                case 3:
-                    easyloadr.load('15%');
-                    break;
                 case 4:
                     switch (a.status) {
-                        case 404:
+                        case 400:
+                            //Bad Request
                             easyloadr.load('50%', 'error');
+                            break;
+                        case 401:
+                            //Unauthorized
+                            easyloadr.load('55%', 'error');
+                            break;
+                        case 403:
+                            //Forbidden
+                            easyloadr.load('60%', 'error');
+                            break;
+                        case 408:
+                            //Request Timeout
+                            easyloadr.load('60%', 'error');
+                            break;
+                        case 444:
+                            //No Response
+                            easyloadr.load('65%', 'error');
+                            break;
+                        case 404:
+                            //Not Found
+                            easyloadr.load('70%', 'error');
                             break;
                         case 200:
                             easyloadr.load('100%', 'success');
                             target.innerHTML = a.response;
                             break;
+                        case 500:
+                            easyloadr.load('75%', 'error');
+                            break;
                         default:
-                            easyloadr.load('25%', 'error');
+                            easyloadr.load('25%', 'blue');
                             break;
                     }
+                    easyloadr.hideLoading();
                     break;
             }
         };
