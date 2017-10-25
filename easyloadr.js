@@ -46,18 +46,21 @@ var easyloadr = {
         //Stop the element from doing its default action
         e.preventDefault();
         //The link to fetch from
-        link = e.target.getAttribute('easy-load-url');
+        var link = e.target.getAttribute('easy-load-url');
         //Method
-        method = e.target.getAttribute('easy-load-method') ? e.target.getAttribute('easy-load-method') : 'GET';
+        var method = e.target.getAttribute('easy-load-method') ? e.target.getAttribute('easy-load-method') : 'GET';
         //The target ID, Class Name or Element Selector Name
-        target = e.target.getAttribute('easy-load-target');
+        var target = e.target.getAttribute('easy-load-target');
         //The target element itself
-        targetElement = document.querySelector(target);
+        var targetElement = document.querySelector(target);
+        //New Page Title
+        var title = e.target.getAttribute('easy-load-title');
+        console.log(title);
 
         /**
          * Fetching content of the link
          */
-        easyloadr.fecthContent(targetElement, link);
+        easyloadr.fecthContent(targetElement, link, method, title);
     },
     ajax: function () {
         a = window.XMLHttpRequest ? new window.XMLHttpRequest :
@@ -87,7 +90,7 @@ var easyloadr = {
                 break;
         }
     },
-    fecthContent: function (target, link) {
+    fecthContent: function (target, link, method, title) {
         a = easyloadr.ajax();
         a.open(method, link + ((/\?/).test(link) ? "&" : "?") + (new Date()).getTime(), true);
         a.overrideMimeType("text/html");
@@ -121,6 +124,7 @@ var easyloadr = {
                             break;
                         case 200:
                             easyloadr.load('100%', 'success');
+                            easyloadr.setTitle(link, title);
                             target.innerHTML = a.response;
                             break;
                         case 500:
@@ -135,5 +139,9 @@ var easyloadr = {
             }
         };
         a.send(null);
+    },
+    setTitle: function (link, title) {
+        document.title = title;
+        window.history.pushState({}, title, link);
     }
 };
