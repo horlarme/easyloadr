@@ -1,0 +1,18 @@
+div[easy-load-loading] {
+    width: 0%;
+    height: 4px;
+    margin: 0;
+    border-radius: 1em;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    -webkit-box-shadow: 0 0 6px black;
+    -moz-box-shadow: 0 0 6px black;
+    box-shadow: 0 0 6px black;
+    -webkit-transition: width 0.5s;
+    -moz-transition: width 0.5s;
+    -ms-transition: width 0.5s;
+    -o-transition: width 0.5s;
+    transition: width 0.5s;
+}
