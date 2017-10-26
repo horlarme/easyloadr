@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="307afa07-29ea-4ca0-b583-89bcee3eabd4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easyloadr.html" afterPath="$PROJECT_DIR$/easyloadr.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easyloadr.js" afterPath="$PROJECT_DIR$/easyloadr.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,21 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="easyloadr.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="easyloadr.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/easyloadr.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="71" column="61" lean-forward="false" selection-start-line="71" selection-start-column="61" selection-end-line="71" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+            <state relative-caret-position="206">
+              <caret line="140" column="37" lean-forward="false" selection-start-line="140" selection-start-column="37" selection-end-line="140" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -62,8 +50,8 @@
         <option value="E:/xampp/htdocs/easyloadr/easyloadr.html" />
         <option value="E:/xampp/htdocs/easyloadr/easyloadr.js" />
         <option value="$PROJECT_DIR$/easyloadr.html" />
-        <option value="$PROJECT_DIR$/easyloadr.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/easyloadr.js" />
       </list>
     </option>
   </component>
@@ -181,12 +169,12 @@
       <option name="presentableId" value="Default" />
       <updated>1508939434417</updated>
       <workItem from="1508939438858" duration="11781000" />
-      <workItem from="1509004188044" duration="1774000" />
+      <workItem from="1509004188044" duration="2383000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13555000" />
+    <option name="totallyTimeSpent" value="14164000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -300,6 +288,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="6" lean-forward="true" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/easyloadr.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -310,16 +306,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/easyloadr.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="71" column="61" lean-forward="false" selection-start-line="71" selection-start-column="61" selection-end-line="71" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+        <state relative-caret-position="206">
+          <caret line="140" column="37" lean-forward="false" selection-start-line="140" selection-start-column="37" selection-end-line="140" selection-end-column="37" />
           <folding />
         </state>
       </provider>

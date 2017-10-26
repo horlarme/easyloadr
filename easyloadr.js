@@ -61,6 +61,7 @@ var easyloadr = {
          * Fetching content of the link
          */
         easyloadr.fecthContent(targetElement, link, method, title);
+
     },
     ajax: function () {
         a = window.XMLHttpRequest ? new window.XMLHttpRequest :
@@ -137,6 +138,7 @@ var easyloadr = {
                             easyloadr.load('25%', 'blue');
                             break;
                     }
+                    easyloadr.init();
                     easyloadr.hideLoading();
                     break;
             }
