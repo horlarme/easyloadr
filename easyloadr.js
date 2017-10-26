@@ -55,7 +55,6 @@ var easyloadr = {
         var targetElement = document.querySelector(target);
         //New Page Title
         var title = e.target.getAttribute('easy-load-title');
-        console.log(title);
 
         /**
          * Fetching content of the link
