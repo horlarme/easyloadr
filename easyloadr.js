@@ -68,7 +68,10 @@ var easyloadr = {
         return a;
     },
     createLoadingBar: function () {
-        document.body.innerHTML += "<div easy-load-loading></div>";
+        //Checking if there is a loading div before adding new one
+        if (!document.querySelector('[easy-load-loading]')) {
+            document.body.innerHTML += "<div easy-load-loading></div>";
+        }
     },
     loadingBar: function () {
         return document.body.querySelector('div[easy-load-loading]');
